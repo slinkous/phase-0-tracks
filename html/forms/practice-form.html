@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Animal Party</title>
+	<title>Animal Form</title>
 </head>
 <body>
-<form action="success.html">
-<label>Name:<input type="text" name="firstname"></label><br>
-<label>What's your favorite animal?<select name="favanimal">
-<option>Cats</option>
-<option>Dogs</option>
-<option>Elephants</option>
-</select><br>
-<label>Why do you like that animal the best? <textarea name="reasoning">
-</textarea></label><br>
-<label> Which animal is the largest?<br>
-<input type="radio" name="sizetest" value="cats">Cats<br>
-<input type="radio" name="sizetest" value="dogs">Dogs<br>
-<input type="radio" name="sizetest" value="elephants">Elephants, obviously</label><br>
-<label>Characteristics of elephants:
-<input type="checkbox" name="elephantchars" value="grey">They are grey</br>
-<input type="checkbox" name="elephantchars" value="tall">They are tall</br>
-<input type="checkbox" name="elephantchars" value="vegetarian">They are vegetarian</br>
-<input type="checkbox" name="elephantchars" value="fast">They are fast</label></br>
-<label>Enter the password to receive an invitation to a secret elephant party!
-<input type="password" name="password"></label><br>
-<input type="submit">	
-</form>
+  <h1>Animal Form</h1>
+  
+	<form action="success.html">
+	<div>
+	  <fieldset><legend>Introduction</legend>
+		<label>Name : <input type="text" name="firstname"></label><br>
+	  </fieldset>
+  	</div>
+  	<div>
+	  <fieldset><legend>Preference</legend>
+		<div>
+		<label>What's your favorite animal? 
+
+		<select name="favanimal">
+		<option value="cats">Cats</option>
+		<option value="dogs">Dogs</option>
+		<option value="elephants">Elephants</option>
+		</select>
+		</label></div>
+		<div>
+		<label>Why do you like that animal the best?</label>
+
+		<textarea name="reasoning">
+		</textarea></div> 
+	  </fieldset>
+	 </div> 
+		
+	 <div>
+		<fieldset><legend>Quiz Time</legend>
+		<label> Which animal is the largest?</label><br>
+		<input type="radio" name="cats" value="cats">Cats<br>
+		<input type="radio" name="dogs" value="dogs">Dogs<br>
+		<input type="radio" name="elephants" value="elephants">Elephants, Obviously.<br>
+
+	    <p>Characteristics of elephants:</p>  
+	    <input type="checkbox" id="grey" value="grey"><label for="grey"> grey</label><br>  
+	    <input type="checkbox" id="tall" value="tall"><label for="tall"> tall</label><br>  
+	    <input type="checkbox" id="vegetarian" value="vegetarian"><label for="vegetarian"> vegetarian</label><br> 
+	    <input type="checkbox" id="fast" value="fast"><label for="fast"> fast</label><br>
+	    </fieldset>
+	</div>    
+	<div>
+	    <fieldset><legend>Contact</legend>
+	      <label>E-mail id</label> 
+	      <input type="email" name="email"><br>
+	    </fieldset><br>
+	    <input type="submit">
+	</div>	
+	</form>
 
 </body>
 </html>
