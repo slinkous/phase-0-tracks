@@ -1,3 +1,12 @@
+body {
+  max-width:60%;
+  width: 960px;
+  display: flex;
+}
+
+main {
+  max-width: 80%;
+}
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -11,7 +20,15 @@ cite {
 
 #external-links ul {
   list-style-type: none;
-  padding-left: 0px;
+  padding-left: 0px;  
+}
+
+#external-links {
+  max-width: 30%;
+  display: block;
+  vertical-align: text-top;
+  margin-right: 2px;
+  padding-right: 2px;
 }
 
 /* you're welcome to edit the
