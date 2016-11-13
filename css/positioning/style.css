@@ -1,0 +1,30 @@
+body {
+	background-color: lightpink;
+}
+div	{
+	margin-top: 20px;
+	margin-left:30%;
+	margin-right:30%;
+}
+}
+img {
+	width: 40%;
+}
+
+.octopus {
+	z-index: 1;
+	position: relative;
+	top: 48px;
+}
+.glasses {
+	z-index: 2;
+	padding-left: 40px;
+	position: relative;
+	bottom: 355px;
+}
+.hat {
+	z-index: 2;
+	position: relative;
+	bottom: 320px;
+	margin-left: 80px;
+}
