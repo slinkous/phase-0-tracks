@@ -1,5 +1,6 @@
 body {
   display: flex;
+  max-width: 756px;
 }
 
 main {
@@ -24,17 +25,13 @@ cite {
 }
 
 #external-links {
-  max-width: 30%;
-  display: float;
+  max-width: 200px;
+  min-width: 150px;
   float: left;
-  vertical-align: text-top;
   margin-right: 3px;
   padding-right: 3px;
 }
 
-/* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
-but it's optional! */
 img {
   width: 100%;
 }
@@ -51,13 +48,36 @@ figcaption {
 
 @media screen and (max-width: 500px) {
   body {
-    background-color: hotpink;
+    background-color: pink;
   }
   main {
-    display: block;
+    
   }
   #external-links {
-    display: block;    
+      
+  }
+
+}
+@media screen and (max-width: 325px) {
+  body {
+    background-color: lightblue;
+    width: 100%;
+    display: block;
+    float: none;
+    position: relative;
+  }
+  main {
+    display: flexbox;
+    float: none;
+    position: relative;
+    width: 99%;
+  }
+  #external-links {
+    z-index: 2;
+    display: flexbox;
+    float: none;
+    position: relative;
+    top: 0px;
   }
 
 }
