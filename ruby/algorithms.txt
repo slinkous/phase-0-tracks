@@ -1,3 +1,23 @@
+**Knit a scarf in stockinette stitch**
+1. Check Gauge
+	- cast on 12 stitches
+	- Until you have twelve rows,
+			- knit a row
+			- purl a row
+	- bind off
+	- measure length and width
+		- calculate stitches per inch: 12/width
+		- calculate rows per inch: 12/length
+2. Choose length and width of desired scarf
+3. Make the scarf
+	- Cast on desired number of stitches (desired width * stitches per inch)
+	- Set row counter to 0
+	- While row counter is less than (desired length * rows per inch)
+		- If row counter is even, knit every stitch until end of row, add one to row counter
+		- Otherwise, purl every stitch until end of row, add one to row counter
+- Bind off all stitches
+
+**Elevator Algorithm**
 - Approach the elevator and note the current floor #
 - If your destination > the current floor, press the ^ elevator call button
 	- Otherwise press the v elevator call button
