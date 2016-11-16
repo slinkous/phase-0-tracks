@@ -1,0 +1,10 @@
+- Approach the elevator and note the current floor #
+- If your destination > the current floor, press the ^ elevator call button
+	- Otherwise press the v elevator call button
+- When the elevator doors open, enter the elevator
+	- EXCEPTION: If the elevator is full, wait until it has departed the floor, and start from step 2
+- Press the elevator button which matches your destination floor.
+- When the elevator doors open, exit the elevator.
+- Repeat step 1
+	- if current floor does not match destination, repeat from step 2
+	- otherwise, you have arrived!
