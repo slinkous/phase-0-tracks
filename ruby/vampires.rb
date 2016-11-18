@@ -61,8 +61,9 @@ while i < employee_count
 			break
 		end
 	end	
-	puts conclusion
-
 	i += 1
+	puts conclusion
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 	
