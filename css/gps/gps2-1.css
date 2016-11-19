@@ -1,3 +1,16 @@
-body	{
-	background-color: blue;
+header {
+ 
+}
+.column-1 {
+  display: inline-block;
+  width: 48%;
+}
+
+.column-2 {
+ display: inline-block;
+  width: 48%;
+}
+
+footer {
+  width: 100%;
 }
