@@ -13,9 +13,11 @@
 
 def encrypt (password)
 	i = 0
+	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	while i < password.length
 		a = password[i]
-		b = a.next
+		alphapos = alphabet.index(a)
+		b = alphabet[alphapos+1]
 		password = password[0...i] + b + password[i+1..password.length]
 		i+=1
 	end
@@ -31,8 +33,8 @@ def decrypt (password)
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	while i < password.length
 		a = password[i]
-		alphapoint = index[a]
-		b = alphabet[alphapoint-1]
+		alphapos = alphabet.index(a)
+		b = alphabet[alphapos-1]
 		password = password[0...i] + b + password[i+1..password.length]
 		i+=1
 	end
