@@ -65,6 +65,8 @@ def test ()
 	else puts "failed"
 	end
 
+puts decrypt(encrypt("swordfish"))
+puts encrypt(decrypt("swordfish"))
 end
 
 puts test()
