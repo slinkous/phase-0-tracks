@@ -35,9 +35,14 @@ else
   hamster_age = hamster_age.to_i
 end
 
-puts "Thanks! Here are the results"
-puts hamster_name  
+puts "Thanks! Here is your hamster:"
+print "Name: "
+puts hamster_name
+print "Volume: "  
 puts hamster_vol
+print "Color: "
 puts hamster_fur 
+print "Adoptable?: "
 puts hamster_adoption 
+print "Age: "
 puts hamster_age
