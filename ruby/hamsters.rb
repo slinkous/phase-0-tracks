@@ -9,31 +9,20 @@ hamster_fur = gets.chomp
 
 
 
-puts "Is this hamster a good candidate for adoption? Enter yes or no."
-valid_input = false
+puts "Is this hamster a good candidate for adoption? (Y/N)"
 hamster_adoption = gets.chomp
-until valid_input == true
-  if hamster_adoption == "yes"
-    hamster_adoption = true
-    valid_input = true
-    puts "thanks"
-  elsif hamster_adoption == "no"
-    hamster_adoption = false
-    valid_input = true
-    puts "thanks"
-  else hamster_adoption
-    puts "Please enter only yes or no."
-    hamster_adoption = gets.chomp
-  end
+if hamster_adoption.upcase == "Y"
+    adoptable = true
+elsif hamster_adoption.upcase == "N"
+    adoptable = false
+else 
+    adoptable = nil
 end
+
 
 puts "Estimated age?"
 hamster_age = gets.chomp
-if hamster_age = ""
-  hamster_age = nil
-else
-  hamster_age = hamster_age.to_i
-end
+
 
 puts "Thanks! Here is your hamster:"
 print "Name: "
@@ -43,6 +32,6 @@ puts hamster_vol
 print "Color: "
 puts hamster_fur 
 print "Adoptable?: "
-puts hamster_adoption 
+puts adoptable
 print "Age: "
 puts hamster_age
