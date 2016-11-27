@@ -28,11 +28,37 @@ puts "How many children? : "
 puts "Interior decor theme? : "
 	client_details[:decor_theme] = gets.chomp
 puts "Are they a good client? (Y/N) : "
-	if gets.chomp.upcase == "Y"
+	answer = gets.chomp
+	if answer.upcase == "Y"
 		client_details[:good_client] = true
-	elsif gets.chomp.upcase == "N"
+	elsif answer.upcase == "N"
 		client_details[:good_client] = false
 	else
 		client_details[:good_client] = nil
 	end
+
+puts client_details
+
+#Loopless key update
+puts "Would you like to update a key? Enter the key name or 'none'."
+key = gets.chomp
+if key == "none"
+	puts "Guess you got it right the first time!"
+#covert input to boolean again
+elsif key == "good_client"
+	puts "What would you like to update the value of #{key} to?: "
+	answer = gets.chomp
+	if answer.upcase == "TRUE"
+		client_details[:good_client] = true
+	elsif answer.upcase == "FALSE"
+		client_details[:good_client] = false
+	else
+		client_details[:good_client] = nil
+	end
+else
+	puts "What would you like to update the value of #{key} to?: "
+	answer = gets.chomp
+	client_details[key.to_sym] = answer
+end
+
 puts client_details
