@@ -2,18 +2,17 @@ real_name = "Felicia Torres"
 
 def switch_name (name)
 	names = name.split(' ')
-	name = names[1] + " " + names[0]
+	name = names[1].capitalize + " " + names[0].capitalize
 end
-
-puts switch_name(real_name)
-
 
 def shift_vowels(name)
 	vowels = "aeiou"
 	name_array = name.downcase.split("")
 	shifted_name =""
 	name_array.each do |letter|
-		if letter.count(vowels) == 1
+		if letter == " "
+			shifted_name << letter
+		elsif letter.count(vowels) == 1
 			if letter == "u"
 				shifted_name << "a"
 			else
@@ -29,10 +28,14 @@ def shift_vowels(name)
 			end
 		end
 	end
-	shifted_name.capitalize	
+	shifted_name
 end
 
-puts shift_vowels("AdReiouz")
+def make_alias (name)
+	switch_name(shift_vowels(name))
+end
+puts "#{real_name} becomes: "
+puts make_alias(real_name)
 
 
 
