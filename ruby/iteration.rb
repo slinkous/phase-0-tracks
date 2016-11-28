@@ -1,6 +1,6 @@
 # Spanish Class Grade Book
 
-assignments = ["Vocabulary Quiz", "Grammar Quiz", "Essay", "Unit Test"]
+assignments = ["Vocabulary Quiz", "Grammar Quiz", "Vocabulary Quiz", "Essay", "Unit Test"]
 
 vocab_test = {
 	"Manuel" => 45,
@@ -54,3 +54,12 @@ puts quizzes
 
 perfect_scores = vocab_test.select {|student, points| points == 50}
 puts perfect_scores
+
+assignments.uniq!
+puts assignments
+
+#Find students who got A's and B's on the quiz
+passing_scores = vocab_test.keep_if {|student, points| points > 40}
+puts passing_scores
+
+
