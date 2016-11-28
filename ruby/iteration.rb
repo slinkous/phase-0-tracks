@@ -43,7 +43,14 @@ assignments.reject! {|assignment| assignment == "Essay: (50 pts)"}
 
 puts assignments
 
+#remove failing students
+
 vocab_test.reject! {|student, points| points < 30}
 
 puts vocab_test
 
+quizzes = assignments.select {|assignment| assignment.include?("Quiz")}
+puts quizzes
+
+perfect_scores = vocab_test.select {|student, points| points == 50}
+puts perfect_scores
