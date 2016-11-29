@@ -56,7 +56,7 @@ def alias_list_ui (list_name)
 		alias_name = make_alias(name)
 		puts "#{name}: #{alias_name}"
 		list_name[name] = alias_name
-		puts "Would you like to add a spy? (type 'no' to finish)"
+		puts "Would you like to add another spy? (type 'no' to finish)"
 		answer = gets.chomp				
 	end
 	list_name
@@ -64,8 +64,9 @@ end
 
 alias_list_ui(aliases)
 
-puts aliases
-
+aliases.each do |real, fake|
+	puts "#{real} is also known as #{fake}."
+end
 
 
 
