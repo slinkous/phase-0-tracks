@@ -37,6 +37,7 @@ def fib(size)
 	sequence
 end
 
+=begin
 puts fib(2)
 puts fib(0)
 puts fib(1)
@@ -45,7 +46,36 @@ puts fib(20)
 puts fib(100)
 
 puts fib(100)[-1] == 218922995834555169026
+=end
 	
-	
+# https://www.sitepoint.com/sorting-algorithms-ruby/
+
+#Made Up Sorting Method
+=begin
+Compare the first two values
+if the left is greater, move this value to the end of the array
+if the right is greater, move to next spot on array to continue comparing
+stop when you reach the last value of the array
+=end
+
+def mothrah_sort (an_array)
+	def move_to_end (value, array)
+		array.delete(value)
+		array.push(value)
+	end
+	pos = 0
+	while pos < an_array.length 
+		if an_array[pos] > an_array[pos + 1]
+			move_to_end(an_array[pos], an_array)
+		else
+			pos += 1
+		end
+	end
+	an_array
+end
+
+puts mothrah_sort(numbas)
+
+
 
 
