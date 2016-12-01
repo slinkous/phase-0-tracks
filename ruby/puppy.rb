@@ -1,3 +1,5 @@
+class Puppy
+end
 =begin
 CHARACTERISTICS
 Color: black
