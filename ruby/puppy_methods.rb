@@ -44,9 +44,9 @@ end
 
 class Horse
 
-	def initialize
+	def initialize (name)
 		puts "initializing horse instance"
-		@name = "Charlie"
+		@name = name
 	end 
 
 	def eat(food)
@@ -61,13 +61,15 @@ class Horse
 end 
 
 stables = []
+horse_names = ["Cheyenne", "Cody", "Boss", "Spot", "Foxy", "Patches", "Buck", "Red", "Doc", "Hawk", "Sadie"]
 
 50.times do |horse|
-	stables << Horse.new
+	stables << Horse.new(horse_names.sample)
 	stables
 end
 
 # p stables
+
 
 food = ["apples", "grain", "grass", "carrots"]
 
