@@ -34,3 +34,25 @@
 - print "Buy X quantity of item" for each item 
 # output: string of user-relevant info
 =end 
+
+def create_list (items)
+	list = {}
+
+	items.split(" ").each do |item|
+		list[item] = 1
+	end
+	list
+end
+
+def add_item (list, item, quantity=1)
+	if list.include?(item)
+		list[item] += quantity
+	else
+		list[item] = quantity
+	end
+	list
+end 
+
+list = create_list("apples bananas oranges")
+
+puts add_item(list, "lemonade", 2) 
