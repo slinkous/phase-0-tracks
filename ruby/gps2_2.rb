@@ -53,6 +53,37 @@ def add_item (list, item, quantity=1)
 	list
 end 
 
+def remove_item(list, item)
+	if list.include?(item)
+		list.delete(item)
+	else
+		puts "That item isn't on the list!"
+	end
+	list
+end
+
+def update_list(list, item, quantity=1)
+	list[item] = quantity
+	list
+end
+
+def print_list(list)
+	puts "Here is your grocery list:"
+	list.each do |item, quantity|
+		puts "You need #{quantity} #{item}"
+	end
+end
+
+#debugging
 list = create_list("apples bananas oranges")
 
-puts add_item(list, "lemonade", 2) 
+p add_item(list, "lemonade", 2)
+p add_item(list, "tomatoes", 3)
+p add_item(list, "onion", 1)
+p add_item(list, "icecream", 4) 
+
+p remove_item(list, "lemonade")
+
+p update_list(list, "icecream", 1)
+
+print_list(list)
