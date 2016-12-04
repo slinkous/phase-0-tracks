@@ -6,11 +6,22 @@ class Santa
 		@age = 0 
 		puts "Initializing Santa instance . . ."
 	end
-	def attribute_test 
-		puts @gender
-		puts @ethnicity
-		puts @reindeer_ranking
-		puts @age
+	def age
+		@age
+	end
+	def ethnicity
+		@ethnicity		
+	end
+	def gender= (new_gender)
+		@gender = new_gender
+	end
+	def celebrate_birthday
+		@age += 1
+	end
+	def get_mad_at (reindeer)
+		puts reindeer.upcase + "!!!!!"
+		@reindeer_ranking.delete(reindeer)
+		@reindeer_ranking << reindeer
 	end
 	def speak
 		puts "Ho ho ho! Haaaappy holidays!"
@@ -20,8 +31,12 @@ class Santa
 	end
 end
 
-kris_kringle = Santa.new("Saint Nick", "other", "nonbinary")
-kris_kringle.attribute_test
+kris_kringle = Santa.new("other", "nonbinary")
+kris_kringle.celebrate_birthday
+kris_kringle.get_mad_at("Dasher")
+kris_kringle.gender=("genderfluid")
+puts kris_kringle.age
+puts kris_kringle.ethnicity
 
 
 #kris_kringle.speak
