@@ -1,14 +1,12 @@
 class Santa 
-	def initialize (name, gender = "none", ethnicity = "prefer not to say")
-		@name = name
+	def initialize (gender = "none", ethnicity = "prefer not to say")
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0 
 		puts "Initializing Santa instance . . ."
 	end
-	def attribute_test
-		puts @name 
+	def attribute_test 
 		puts @gender
 		puts @ethnicity
 		puts @reindeer_ranking
