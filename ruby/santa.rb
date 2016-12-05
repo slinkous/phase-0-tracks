@@ -1,6 +1,6 @@
-class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+class Santa 
+	attr_reader :ethnicity
+	attr_accessor :age, :gender
 	def initialize (gender = "none", ethnicity = "prefer not to say")
 		@gender = gender
 		@ethnicity = ethnicity
@@ -25,16 +25,14 @@ class Santa
 	end
 end
 
-kris_kringle = Santa.new("other", "nonbinary")
-kris_kringle.celebrate_birthday
-kris_kringle.get_mad_at("Dasher")
-kris_kringle.gender=("genderfluid")
-puts kris_kringle.age
-puts kris_kringle.ethnicity
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
+25.times do |santa|
+	kris_kringle = Santa.new(example_genders.sample, example_ethnicities.sample)
+	kris_kringle.age= (rand(140))
+	puts "This santa is #{kris_kringle.gender}, #{kris_kringle.ethnicity}, and #{kris_kringle.age} years old."
+end
 
-#kris_kringle.speak
-
-#kris_kringle.eat_milk_and_cookies("chocolate chip")
 
 
