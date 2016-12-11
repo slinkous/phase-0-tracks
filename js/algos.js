@@ -8,7 +8,7 @@ output: string of longest word
 -return a string equal to the value of the remaining array
 */
 
-function BiggestString (string_array) {
+function BiggestString (stringArray) {
 	function SplitArray(anArray) {
 		var arrayA =[];
 		var arrayB =[];
@@ -20,12 +20,24 @@ function BiggestString (string_array) {
 		splitArray = [arrayA, arrayB];
 		return splitArray;
 	}
-	return SplitArray(string_array)
+	function CompareArrays(arrayA,arrayB){
+		biggerArray = [];
+		for (var i = 0; i < arrayA.length; i++){
+			if (arrayA[i].length >= arrayB[i].length) {
+				biggerArray.push (arrayA[i]);
+			}
+			else {
+				biggerArray.push (arrayB[i]);
+			}
+		}
+		return biggerArray;
+	}
+	return CompareArrays(SplitArray(stringArray)[0],SplitArray(stringArray)[1]);
 }
 
-sampleArray = ["a","b","c","d","e","f"];
+sampleArray = ["a","bb","cccc","dddd","eee","fffff"];
 sampleArray2 = ["a","b","c","d","e"];
 
 console.log(BiggestString(sampleArray));
-console.log(BiggestString(sampleArray2));
+// console.log(BiggestString(sampleArray2));
 
