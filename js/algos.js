@@ -15,7 +15,7 @@ function BiggestString (stringArray) {
 		arrayA = anArray.slice (0,(anArray.length/2));
 		arrayB = anArray.slice ((anArray.length/2));
 		if ( (anArray.length % 2) != 0) {
-			arrayA.push(null);
+			arrayA.push("");
 		}
 		splitArray = [arrayA, arrayB];
 		return splitArray;
@@ -23,6 +23,7 @@ function BiggestString (stringArray) {
 	function CompareArrays(arrayA,arrayB){
 		biggerArray = [];
 		for (var i = 0; i < arrayA.length; i++){
+
 			if (arrayA[i].length >= arrayB[i].length) {
 				biggerArray.push (arrayA[i]);
 			}
@@ -32,12 +33,18 @@ function BiggestString (stringArray) {
 		}
 		return biggerArray;
 	}
-	return CompareArrays(SplitArray(stringArray)[0],SplitArray(stringArray)[1]);
+	do {
+		testArrays = SplitArray(stringArray);
+		stringArray = CompareArrays(testArrays[0], testArrays[1]);
+	}while (testArrays[0][0] != "")
+
+	longestString = stringArray[0];
+	return longestString;
 }
 
-sampleArray = ["a","bb","cccc","dddd","eee","fffff"];
-sampleArray2 = ["a","b","c","d","e"];
+sampleArray = ["a","bb","cccc","dd","e","fffff"];
+sampleArray2 = ["aaaaa","bb","ccccccc","d","e"];
 
 console.log(BiggestString(sampleArray));
-// console.log(BiggestString(sampleArray2));
+console.log(BiggestString(sampleArray2));
 
