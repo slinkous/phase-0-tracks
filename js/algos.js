@@ -1,5 +1,7 @@
 /*
-Longest Word Function
+Release 0: Longest Word Function
+
+(borrowing from the sorting methods )
 input: array of words
 output: string of longest word
 -split array in half (add nil for odd number?)
@@ -9,6 +11,7 @@ output: string of longest word
 */
 
 function BiggestString (stringArray) {
+	//returns an array of two arrays, inserting an empty string so that they are the same length
 	function SplitArray(anArray) {
 		var arrayA =[];
 		var arrayB =[];
@@ -20,6 +23,7 @@ function BiggestString (stringArray) {
 		splitArray = [arrayA, arrayB];
 		return splitArray;
 	}
+	//returns an array with the higher value between the same position of each array
 	function CompareArrays(arrayA,arrayB){
 		biggerArray = [];
 		for (var i = 0; i < arrayA.length; i++){
@@ -42,9 +46,36 @@ function BiggestString (stringArray) {
 	return longestString;
 }
 
+/*
+Release 1: Key-Value Match
+input: two objects
+output: boolean
+1. Make two arrays of the string names of the key values of each object
+2. Iterate through each value of one array looking for a match in the second
+3. Set a value initialized as false to true if a match is found
+*/
+
+function KeyMatch (object1, object2){
+	function GetKeys (object1){
+		objArray =[]
+		for (var prop in object1) {
+    if (object1.hasOwnProperty(prop)) {
+        objArray.push(prop);
+      }
+    }
+    return objArray;
+	}
+	keyArray1 = GetKeys(object1);
+	keyArray2 = GetKeys(object2);
+}
+
+
+// Driver Code
 sampleArray = ["a","bb","cccc","dd","e","fffff"];
 sampleArray2 = ["aaaaa","bb","ccccccc","d","e"];
+sampleObject1 ={name:"Bernard", language:"English"};
+sampleObject2 = {}
 
-console.log(BiggestString(sampleArray));
-console.log(BiggestString(sampleArray2));
-
+// console.log(BiggestString(sampleArray));
+// console.log(BiggestString(sampleArray2));
+console.log(KeyMatch(sampleObject1, sampleObject2));
