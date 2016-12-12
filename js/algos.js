@@ -67,6 +67,18 @@ function KeyMatch (object1, object2){
 	}
 	keyArray1 = GetKeys(object1);
 	keyArray2 = GetKeys(object2);
+	foundMatch = false;
+
+	//loop to search for matches
+
+	for (var i = 0; i < keyArray1.length; i++){
+		for(var j = 0; j < keyArray2.length; j++) {
+			if ( keyArray1[i] == keyArray2[j]){
+				foundMatch = true;
+				break;
+			}
+		}
+	}
 }
 
 
@@ -74,7 +86,7 @@ function KeyMatch (object1, object2){
 sampleArray = ["a","bb","cccc","dd","e","fffff"];
 sampleArray2 = ["aaaaa","bb","ccccccc","d","e"];
 sampleObject1 ={name:"Bernard", language:"English"};
-sampleObject2 = {}
+sampleObject2 = {language: "Swahili", age: 35}
 
 // console.log(BiggestString(sampleArray));
 // console.log(BiggestString(sampleArray2));
