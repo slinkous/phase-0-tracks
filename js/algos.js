@@ -79,6 +79,7 @@ function KeyMatch (object1, object2){
 			}
 		}
 	}
+	return foundMatch;
 }
 
 
