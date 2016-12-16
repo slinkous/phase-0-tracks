@@ -3,4 +3,10 @@ sqlite> SELECT * FROM reviews JOIN businesses ON business_id = businesses.id JOI
 2                          2.5         Terrible.                  3            1           3           Grundy Hollow  1           Bradford    Pitt      
 3                          5           A++++++                    1            3           1           The Beagle Ni  3           Angela      Jolie     
 4                          1           :(                         1            2           1           The Beagle Ni  2           Mandy       Kaling    
-sqlite> 
+
+
+sqlite> SELECT users.first_name, users.last_name, businesses.names, reviews.comment, reviews.stars FROM reviews JOIN businesses ON business_id = businesses.id JOIN users ON user_id = users.id;
+Mandy|Kaling|Amir's Towing|Great place! So friendly!|4
+Bradford|Pitt|Grundy Hollow Wedding Chapel|Terrible.|2.5
+Angela|Jolie|The Beagle Nightclub|A++++++|5
+Mandy|Kaling|The Beagle Nightclub|:(|1
