@@ -1,0 +1,6 @@
+sqlite> SELECT * FROM reviews JOIN businesses ON business_id = businesses.id JOIN users ON user_id = users.id;
+1                          4           Great place! So friendly!  2            2           2           Amir's Towing  2           Mandy       Kaling    
+2                          2.5         Terrible.                  3            1           3           Grundy Hollow  1           Bradford    Pitt      
+3                          5           A++++++                    1            3           1           The Beagle Ni  3           Angela      Jolie     
+4                          1           :(                         1            2           1           The Beagle Ni  2           Mandy       Kaling    
+sqlite> 
