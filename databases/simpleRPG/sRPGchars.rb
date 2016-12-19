@@ -9,7 +9,7 @@ require 'sqlite3'
 # 	name, 
 # 	class (warrior, healer, rogue, mage), 
 # 		(calling this "role" to avoid keyword problems) 
-# 	strength 
+# 	strength (all stats are /20, but should be at least 2 and not initialize greater than 18)
 # 	intelligence 
 # 	constitution
 # 	wisdom
@@ -30,14 +30,31 @@ SQL
 db.execute(create_character_table)
 
 def create_char(db, name, role)
-	# def roll_stats(role)
-	# 	stats = {}
-	# 	stats(strength)
-	# end
-  db.execute("INSERT INTO characters (name, role) VALUES (?, ?)", [name, role])
+	def roll_stats(role)
+		stats = {
+			strength: rand(10) + 2,
+			intelligence: rand(10) + 2,
+			constitution: rand(10) + 2,
+			wisdom: rand(10) + 2
+		}
+		if role == "warrior"
+			stats[:strength] += 3
+		elsif role == "rogue"
+			stats[:intelligence] += 3
+		elsif role == "mage"
+			stats[:wisdom] += 3
+		elsif role == "healer"
+			stats[:constitution] +=3
+		end
+		stats
+	end
+	char_stats = roll_stats(role)
+
+  db.execute("INSERT INTO characters (name, role, strength, intelligence, constitution, wisdom) VALUES (?, ?, ?, ?, ?, ?)", [name.capitalize, role, char_stats[:strength], char_stats[:intelligence], char_stats[:constitution], char_stats[:wisdom]])
 end
 
-create_char(db, "Tarien", "rogue")
+# create_char(db, "Tarien", "rogue")
+create_char(db, "A'mael", "rogue")
 
 # def roll_stats(db, name, role)
 # 	strength 
