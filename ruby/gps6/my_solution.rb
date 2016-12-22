@@ -60,7 +60,6 @@ class VirusPredictor
     	speed -= 0.5
     end
 
-
     # if @population_density >= 200
     #   speed += 0.5
     # elsif @population_density >= 150
@@ -104,3 +103,15 @@ end
 
 #=======================================================================
 # Reflection Section
+=begin
+1. What are the differences in the hash syntaxes used in state_data? 
+	> The first using a string (the state name), while within each state is a hash using keys (e.g. :population)
+2. What does require_relative do and how does it differ from require?
+	> Require_relative uses another ruby file within the same directory. require can be used to incorporate a variety of ruby (libraries?) created by others
+3. What are some ways to interate through a hash?
+	> .each is a solid choice. You could also, I suppose, set a counter to the hash length and count down, or use it with .times
+4. When refactoring virus_effects what stood out?
+	> Virus_effects made perfect sense to me until I really considered how it was using attributes. Was difficult to imagine making it conciser, but there we have it!
+5. What concept did you solidify in this challenge?
+	> Referencing hashes, and hashes within hashes, as well as using attributes. Private methods was also a new concept for me. 
+=end
