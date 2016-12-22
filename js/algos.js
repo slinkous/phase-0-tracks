@@ -130,4 +130,3 @@ console.log(MakeData(10));
 // console.log(BiggestString(sampleArray));
 // console.log(BiggestString(sampleArray2));
 // console.log(KeyMatch(sampleObject1, sampleObject2));
->>>>>>> da68a3ff5bc7ce39e43f6162426357ed7451471b
