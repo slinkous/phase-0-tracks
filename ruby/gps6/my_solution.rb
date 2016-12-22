@@ -19,14 +19,14 @@ class VirusPredictor
 
 # Runs both of the methods below without having to specify the in intake values. It will only return the speed, but because both the methods it uses have print statements, it will print all the info to the console. 
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
 # Calculates the number of deaths that could be expected in an outbreak, by categorizing broadly by population density, and depending on it, calculating the number of deaths as a function of the population, rounded down. Then it prints the results as a sentence.
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -46,7 +46,7 @@ class VirusPredictor
 
 # Calculates how long it will take the outbreak to spread across the state, based solely on broad categories of population density. Prints it as a sentence.
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
