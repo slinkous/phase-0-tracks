@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Fidget Page!</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Welcome to the Fidget Page</h1>
+	<h2>FIDGET AWAY</h2>
+	<div id ="top_section">
+		<p id ="intro">This page is designed to allow you to fidget virtually, by clicking and typing. Fidgeting can help clear the mind and let your creativity flow!
+		</p>
+		<p id ="figets_list">
+			<ul>
+				<li id="fade">Make me fade!</li>
+				<li id="disappear">Make me disappear!</li>
+			</ul>
+		</p>
+	</div>
+	<div id ="bottom_section">
+		<img id="beyonces" src="images/beyoncetea.jpg">
+		<form>
+			<h3>Press a key!</h3>
+			<input type="text" id="keyPressed">
+		</form>
+	</div>
+
+	<script>
+
+		var imageArray = ["images/beyonce-mascara.jpg", "images/beyoncesnarl.gif", "images/beyoncequeen.gif", "images/beyoncetea.jpg"]
+		var displayImage = 1
+		$("#beyonces").click(function() {
+			var image = imageArray[displayImage];
+			displayImage++;
+			if(displayImage > 3){
+				displayImage = 0;
+			}
+			$("#beyonces").attr("src", image)
+		});
+
+		$(document).keypress(function(e){
+		var pressedKey = String.fromCharCode(e.which)
+		$("#keyPressed").val(pressedKey);
+	});
+
+		$("#fade").click(function(){
+			$(this).fadeTo('slow', .10);
+		})
+		
+		$("#disappear").click(function(){
+			$(this).hide();
+		});
+
+	</script>
+</body>
+</html>
